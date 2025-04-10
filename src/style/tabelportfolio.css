@@ -1,0 +1,156 @@
+/* Container utama */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Tabel */
+table {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 100%;
+}
+
+/* Header tabel */
+th {
+    background: #3498db;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Isi tabel */
+td {
+    padding: 8px;
+    text-align: justify !important;
+}
+
+/* Styling untuk tabel produk */
+.table thead th {
+    text-align: center;
+    vertical-align: middle;
+    background-color: #f8f9fa;
+  }
+  
+  .table tbody td {
+    vertical-align: middle;
+  }
+  
+  /* Jika ingin border lebih tebal untuk pemisah grup */
+  .table tbody tr:nth-child(4n) td {
+    border-bottom: 2px solid #dee2e6;
+  }
+
+/* Tombol */
+button {
+    margin: 2px;
+    margin-top: 10px;
+    vertical-align: middle;
+}
+
+.button-tambah {
+    background-color: var(--pink) !important;
+    border: 2px solid var(--pink) !important;
+}
+
+.button-batal {
+    background-color: var(--background) !important;
+    border: 2px solid var(--background) !important;
+}
+
+.button-simpan {
+    background-color: var(--pink) !important;
+    border: 2px solid var(--pink) !important;
+}
+
+/* Modal */
+.modal-header {
+    background: var(--background);
+    color: var(--heading);
+}
+
+.modal-title.h4 {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.form-label {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: bold;
+}
+
+.modal-footer {
+    justify-content: space-between;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Untuk layar kecil (HP) */
+@media screen and (max-width: 768px) {
+    .dashboard-container {
+        flex-direction: column;
+    }
+
+    /* Sidebar jadi lebih kecil */
+    .dashboard-container .sidebar {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+    }
+
+    /* Tabel agar bisa di-scroll */
+    .table-responsive {
+        overflow-x: auto;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    /* Text di tombol lebih kecil */
+    button {
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+}
+
+/* Untuk tablet (medium screen) */
+@media screen and (max-width: 1024px) {
+    .dashboard-container {
+        flex-direction: row;
+    }
+
+    /* Sidebar tetap ada tapi lebih kecil */
+    .dashboard-container .sidebar {
+        width: 200px;
+    }
+}
+
+/* Table Responsive */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 1rem;
+}
+
+.table {
+  margin-bottom: 0;
+}
+
+/* Untuk tabel dengan banyak kolom */
+@media screen and (max-width: 992px) {
+  .table-responsive table {
+    min-width: 800px;
+  }
+}
+
+/* Styling untuk kolom aksi */
+.table td:last-child {
+  white-space: nowrap; /* Jaga agar tombol tetap dalam satu baris */
+  min-width: 100px;
+}

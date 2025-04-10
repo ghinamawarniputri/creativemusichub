@@ -1,0 +1,547 @@
+/* LOGO */
+.logo {
+  display: block;
+  margin: 0 auto;
+  max-width: 80%;
+  height: auto;
+}
+
+/* WARNA DAN VARIABEL */
+:root {
+  --primary-color: #ff6b6b;
+  --secondary-color: #f9c74f;
+  --tertiary-color: #90be6d;
+  --dark-color: linear-gradient(135deg, #24243e 0%, #302b63 50%, #0f0c29 100%);
+  --bg-color: linear-gradient(135deg, #2b1055 0%, #7597de 100%);
+  --light-color: #F2F2F2;
+  --nav-color: #0E0B13;
+  --background: #0E1117;
+  --heading: #F2F2F2;
+  --card: #1C1F26;
+  --pink: #FF007F;
+  --text: #A1A1B0;
+}
+
+.nav-link .ms-auto {
+  margin-left: auto;
+}
+
+/* DASHBOARD CONTAINER */
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.dashboard-content {
+  flex: 1;
+  margin-left: 250px;
+  width: calc(100% - 250px);
+  position: relative;
+  min-height: 100vh;
+  transition: all 0.3s ease;
+}
+
+/* Saat sidebar tertutup */
+.sidebar-wrapper.closed ~ .dashboard-content {
+  margin-left: 90px;
+  width: calc(100% - 90px);
+}
+
+.dashboard-content-isi {
+  padding: 20px;
+  margin-top: 30px;
+  transition: all 0.3s ease;
+}
+
+.dashboard-content-isi h2 {
+  color: var(--background);
+  font-family: 'Orbitron', sans-serif;
+  font-weight: bold;
+}
+
+/* HEADER DASHBOARD */
+.dashboard-header {
+  background: var(--heading);
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #ddd;
+  position: sticky;
+  top: 0;
+  margin-bottom: 40px;
+  z-index: 1000;
+  width: 100%;
+}
+
+.dashboard-header h4 {
+  margin: 0;
+  color: var(--background);
+  font-weight: bold;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.dashboard-header h4 span {
+  color: var(--pink);
+  font-family: 'Orbitron', sans-serif;  
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  font-size: 16px;
+  padding: 5px 10px;
+  border-bottom: 2px solid #ccc;
+}
+
+.icon {
+  color: #555;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.user-icon {
+  font-size: 30px;
+}
+
+.header-icons .icon {
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.header-icons .icon:hover {
+  transform: scale(1.1);
+  color: #6a0dad;
+}
+
+.dashboard-main {
+  flex: 1;
+  padding: 20px;
+}
+
+.dashboard-main h2 {
+  color: var(--background);
+  font-weight: bold;
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* RESPONSIVE GRID UNTUK CARDS */
+.dashboard-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+  padding: 10px;
+  background: #ffffff;
+  border-radius: 10px;
+  justify-content: space-between;
+}
+
+.dashboard-card {
+  background: linear-gradient(135deg, #ffffff, #f0e7ff);
+  color: #333;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 300px; /* Lebar card dibuat compact */
+  height: 200px; /* Ketinggian card dibatasi */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.dashboard-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  color: #6a1b9a;
+  font-family: 'Inter', sans-serif;
+}
+
+.dashboard-card p {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #4a148c;
+  font-family: 'Inter', sans-serif;
+}
+
+.dashboard-card::before {
+  content: "💰"; /* Bisa ganti ikon lain sesuai kebutuhan */
+  font-size: 2.8rem;
+  position: absolute;
+  top: 3px;
+  right: 12px;
+  opacity: 0.5;
+}
+
+.chart-container {
+  margin-top: 20px;
+  margin-left: 50px;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 1000px;
+}
+
+/* FOOTER */
+footer{
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 10px;
+}
+
+/* Ukuran Tablet */
+@media (max-width: 1024px) {
+  .sidebar-container {
+    width: 200px; /* Sidebar lebih kecil */
+  }
+
+  .dashboard-cards {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+/* Ukuran Mobile */
+@media (max-width: 768px) {
+  .sidebar-container {
+    width: 80px; /* Sidebar lebih kecil */
+    overflow: hidden;
+  }
+
+  .sidebar-container h4 {
+    display: none; /* Hilangkan teks */
+  }
+
+  .sidebar-container .nav-link {
+    justify-content: center;
+  }
+
+  .logo {
+    max-width: 50px; /* Logo lebih kecil */
+  }
+
+  .dashboard-cards {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+
+/* Ukuran Mobile Kecil */
+@media (max-width: 480px) {
+  .sidebar-container {
+    position: fixed;
+    left: -100%;
+    transition: left 0.3s ease;
+  }
+
+  .sidebar-container.open {
+    left: 0;
+  }
+
+  .sidebar-toggle {
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: white;
+  }
+
+  .dashboard-cards {
+    grid-template-columns: repeat(1, 1fr); /* 1 kolom di mobile */
+  }
+}
+
+/* Admin Login Page */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+/* Background Gradient */
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: var(--background); 
+}
+
+/* Login Form */
+.login-form {
+  background: var(--card);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 2px solid var(--pink);
+  padding: 40px;
+  width: 400px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Logo */
+.logo {
+  width: 1000px;
+}
+
+/* Subtext */
+.subtext {
+  color: var(--heading);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 10px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+/* Input Group */
+.input-group {
+  display: flex;
+  align-items: center;
+  background: var(--background); /* Semi-transparent white */
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+/* Input Icons */
+.input-icon {
+  color: var(--pink); /* Purple color */
+  margin-right: 10px;
+}
+
+/* Input Fields */
+.input-field {
+  border: none;
+  background: var(--background);
+  outline: none;
+  width: 100%;
+  font-size: 14px;
+  color: var(--heading);
+  flex: 1;
+}
+
+.input-field::placeholder {
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+}
+
+/* Login Button */
+.login-button {
+  width: 100%;
+  padding: 12px;
+  background: var(--background); /* Vibrant orange */
+  color: var(--heading);
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  border: 2px solid var(--pink);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+  background: linear-gradient(
+    135deg,
+    #fad0c4,
+    #ff9a9e
+  ); /* Reverse gradient on hover */
+}
+
+/* FAQ Page Layout */
+.faq-page {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Content Styling */
+.content {
+  flex: 1;
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+
+/* FAQ Table Styling */
+.faq-table {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.faq-table h2 {
+  margin-bottom: 20px;
+}
+
+.faq-table .btn-primary {
+  margin-bottom: 20px;
+}
+
+/* Table Container */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  padding-left: 10px;
+}
+
+/* Table Styles */
+.table {
+  min-width: 800px;
+  width: 100%;
+}
+
+.table th, 
+.table td {
+  white-space: normal;
+  word-break: break-word;
+  min-width: 100px;
+}
+
+/* Modal Styling */
+.modal-content {
+  border-radius: 8px;
+}
+
+.modal-header {
+  background-color: #343a40;
+  color: white;
+  border-bottom: none;
+}
+
+.modal-title {
+  font-size: 1.25rem;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.modal-footer {
+  border-top: none;
+  padding: 100px;
+}
+
+/* Button Styling */
+.btn-warning {
+  background-color: #ffc107;
+  border-color: #ffc107;
+}
+
+.btn-warning:hover {
+  background-color: #e0a800;
+  border-color: #e0a800;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+  border-color: #c82333;
+}
+
+/* pesan error */
+.error-message {
+  background: #ff4d4d;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  animation: shake 0.3s ease-in-out;
+}
+
+.g-recaptcha {
+  display: flex;
+  justify-content: center;
+  margin: 10px auto; /* Menengahkan reCAPTCHA */
+  transform: scale(0.9); /* Perkecil sedikit agar pas */
+  transform-origin: center;
+}
+
+.recaptcha-container {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
+}
+
+.recaptcha-container-2{
+  display: flex;
+  justify-content: center;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+  .dashboard-content {
+    margin-left: 220px;
+    width: calc(100% - 220px);
+  }
+  
+  .sidebar-wrapper.closed ~ .dashboard-content {
+    margin-left: 90px;
+    width: calc(100% - 90px);
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .dashboard-content {
+    margin-left: 200px;
+    width: calc(100% - 200px);
+  }
+  
+  .sidebar-wrapper.closed ~ .dashboard-content {
+    margin-left: 90px;
+    width: calc(100% - 90px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .dashboard-content {
+    margin-left: 80px;
+    width: calc(100% - 80px);
+  }
+  
+  .sidebar-wrapper.closed ~ .dashboard-content {
+    margin-left: 60px;
+    width: calc(100% - 60px);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .dashboard-content {
+    margin-left: 60px;
+    width: calc(100% - 60px);
+  }
+  
+  .sidebar-wrapper.closed ~ .dashboard-content {
+    margin-left: 60px;
+    width: calc(100% - 60px);
+  }
+}

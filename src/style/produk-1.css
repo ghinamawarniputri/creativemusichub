@@ -1,0 +1,214 @@
+:root {
+  --primary-color: #ff6b6b;
+  --secondary-color: #f9c74f;
+  --tertiary-color: #90be6d;
+  --dark-color: linear-gradient(135deg, #24243e 0%, #302b63 50%, #0f0c29 100%);
+  --bg-color: linear-gradient(135deg, #2b1055 0%, #7597de 100%);
+  --light-color: #e9c46a;
+  --nav-color: #0E0B13;
+  --background: #0E1117;
+  --heading: #F2F2F2;
+  --card: #1C1F26;
+  --pink: #FF007F;
+  --text: #A1A1B0;
+}
+
+/* Kontainer utama */
+.music-container {
+  background: var(--background);
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.image-section {
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  position: relative;
+}
+
+.image-overlay {
+  position: relative;
+  
+}
+
+.music-image {
+  max-width: 100%;
+  width: 800px;
+  margin-top: 100px;
+  height: 850px;
+}
+
+.overlay-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 1;
+}
+
+.song-title {
+  font-size: 28px;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  margin-bottom: 150px;
+  margin-top: 150px;
+}
+
+.music-controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 100px;
+}
+
+.download-btn {
+  display: block;
+  margin: auto;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: yellow;
+}
+
+/* Bagian Kanan */
+.music-section {
+  flex: 1;
+  text-align: left;
+  padding: 10px;
+}
+
+.inspiration-title {
+  font-size: 50px;
+  font-weight: bold;
+  color: var(--heading);
+  font-family: 'Rajdhani', sans-serif;
+  margin-bottom: 50px;
+  margin-top: 100px;
+}
+
+.inspiration-title span {
+  color: var(--pink);
+}
+
+.inspiration-text {
+  font-style: italic;
+  margin-bottom: 50px;
+  margin-right: 80px;
+  margin-left: 20px;
+  text-align: center;
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+}
+
+.ai-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 150px;
+  text-align: center;
+}
+
+.lyric-input {
+  width: 80%;
+  height: 200px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  background: #15133c;
+  border: 1px solid var(--card);
+  color: rgb(92, 141, 130);
+  margin-bottom: 10px;
+}
+
+/* .create-btn {
+  font-size: 16px;
+  font-weight: bold;
+  background: linear-gradient(45deg, #ff1493, #ffcc00);
+  border: none;
+} */
+
+.lyric-input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  margin-top: -50px;
+  width: 100%;
+}
+
+.lyric-input {
+  width: 100%; 
+}
+
+.form-lyric {
+  background: var(--card);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+}
+
+.btn-lyric {
+  display: block;
+  align-items: center;
+  padding: 0.6rem 1rem;
+  background: var(--background);
+  color: var(--heading);
+  font-family: 'Rajdhani', sans-serif;
+  text-decoration: none;
+  border: 2px solid var(--pink);
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.5s ease;
+  transform: translateY(0);
+}
+
+
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .music-container {
+    flex-direction: column;
+  }
+
+  .image-section, .music-section {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .image-section {
+    margin-bottom: 20px;
+  }
+
+  .music-section {
+    text-align: center;
+  }
+
+  .overlay-content {
+    top: 60%;
+  }
+}
+
+@media (max-width: 480px) {
+  .song-title {
+    font-size: 20px;
+  }
+
+  .inspiration-title {
+    font-size: 20px;
+  }
+
+  .ai-title {
+    font-size: 16px;
+  }
+
+  .btn-lyric, .download-btn {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}

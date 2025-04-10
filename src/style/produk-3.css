@@ -1,0 +1,124 @@
+:root {
+  --primary-color: #ff6b6b;
+  --secondary-color: #f9c74f;
+  --tertiary-color: #90be6d;
+  --dark-color: linear-gradient(135deg, #24243e 0%, #302b63 50%, #0f0c29 100%);
+  --bg-color: linear-gradient(135deg, #2b1055 0%, #7597de 100%);
+  --background: #0e1117;
+  --heading: #f2f2f2;
+  --card: #1c1f26;
+  --pink: #ff007f;
+  --text: #a1a1b0;
+  --shadow: 0px 4px 12px rgba(255, 0, 127, 0.4);
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #1f1a3c;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.sound-page {
+  padding-bottom: 50px;
+  background: var(--background);
+}
+
+/* Header Section */
+.page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: url("../assets/Frame-3.png") no-repeat center center/cover;
+  padding: 60px 20px;
+}
+
+.judul {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--heading);
+  font-family: "Rajdhani", sans-serif;
+}
+
+.judul .span {
+  color: var(--pink);
+}
+
+/* Image Section */
+.img-fluid {
+  max-width: 80%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.shadow-lg {
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Buttons */
+.btn-sound {
+  font-weight: bold;
+  background-color: var(--background);
+  color: white; /* Mengubah warna teks menjadi putih */
+  font-family: "Rajdhani", sans-serif;
+  border: none; /* Menghapus border */
+  border-radius: 5px; /* Menambahkan border-radius */
+  transition: background-color 0.3s ease; /* Menggunakan transition background-color */
+  cursor: pointer; /* Menambahkan cursor pointer */
+  padding: 12px 24px; /* Menambahkan padding */
+  box-shadow: var(--shadow); /* Menambahkan box-shadow */
+}
+
+.btn-sound:hover {
+  background-color: var(--pink); /* Warna hover sama dengan tombol sebelumnya */
+  font-weight: bold;
+  box-shadow: var(--shadow); /* Menambahkan box-shadow */
+  color: var(--background);
+}
+
+.btn-sound:active {
+  outline: none; /* Menghilangkan outline biru bawaan browser */
+  background-color: var(
+    --pink
+  ); /* Atau warna latar belakang yang Anda inginkan */
+  color: var(--background);
+  box-shadow: var(--shadow);
+}
+
+.custom-container {
+  font-weight: bold;
+  display: inline-block;
+  border: 2px solid var(--pink);
+  padding: 6px 12px;
+  border-radius: 5px;
+  color: var(--text);
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Menambahkan transisi untuk background-color dan color */
+  box-shadow: var(--shadow);
+}
+
+.custom-container:hover {
+  background-color: var(
+    --pink
+  ); /* Mengubah background menjadi pink saat hover */
+  color: var(--background); /* Mengubah color menjadi background saat hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .judul {
+    font-size: 2rem;
+  }
+
+  .img-fluid {
+    max-width: 90%;
+  }
+}

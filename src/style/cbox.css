@@ -1,0 +1,20 @@
+:root {
+  --primary-color: #ff6b6b;
+  --secondary-color: #f9c74f;
+  --tertiary-color: #90be6d;
+  --dark-color: linear-gradient(135deg, #24243e 0%, #302b63 50%, #0f0c29 100%);
+  --bg-color: linear-gradient(135deg, #2b1055 0%, #7597de 100%);
+  --light-color: #e9c46a;
+  --nav-color: #0E0B13;
+  --background: #0E1117;
+}
+
+.cbox-container {
+  background:  #0E1117;
+}
+
+.cbox-wrapper {
+  position: relative;
+  left: 0px;
+  bottom: 0px;
+}

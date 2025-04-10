@@ -1,0 +1,359 @@
+/* WARNA DAN VARIABEL */
+:root {
+  --primary-color: #A1A1B0;
+  --secondary-color: #FF007F;
+  --tertiary-color: #90be6d;
+  --dark-color: linear-gradient(135deg, #24243e 0%, #302b63 50%, #0f0c29 100%);
+  --bg-color: linear-gradient(135deg, #2b1055 0%, #7597de 100%);
+  --light-color: #F2F2F2;
+  --nav-color: #0E0B13;
+  --background: #0E1117;
+  --heading: #F2F2F2;
+  --card: #1C1F26;
+  --pink: #FF007F;
+  --text: #A1A1B0;
+}
+
+/* SIDEBAR */
+.sidebar-wrapper {
+  width: 250px;
+  height: 100vh;
+  background: var(--background);
+  color: var(--background);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Sidebar tertutup */
+.sidebar-wrapper.closed {
+  width: 90px;
+  color: var(--heading);
+}
+
+/* TOMBOL TOGGLE SIDEBAR */
+.sidebar-toggle {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+  z-index: 1100;
+  padding: 5px;
+}
+
+/* Ikon tetap putih */
+.icon {
+  color: white !important;
+}
+
+.sidebar-wrapper.closed .icon {
+  color: var(--heading) !important;
+}
+
+/* LOGO */
+.logo {
+  width: 120px;
+  height: auto;
+  display: block;
+  margin: 70px auto 30px;
+  transition: all 0.3s ease;
+  padding: 5px;
+}
+
+/* Logo saat sidebar tertutup */
+.sidebar-wrapper.closed .logo {
+  width: 80px;
+  margin-top: 40px;
+  margin-right: 160px;
+}
+
+/* Container untuk logo */
+.logo-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 40px;
+  margin-top: 20px;
+}
+
+/* NAVIGASI */
+.nav-link {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  color: var(--heading) !important;
+  font-size: 14px;
+  font-family: 'Rajdhani', sans-serif;
+  transition: all 0.3s ease;
+  margin-top: 5px;
+  background: transparent !important;
+}
+
+.nav-link .icon {
+  font-size: 18px;
+  min-width: 35px;
+}
+
+.link-text {
+  white-space: nowrap;
+  font-size: 14px;
+}
+
+/* Warna saat sidebar terbuka */
+.sidebar-wrapper .nav-link {
+  color: var(--heading);
+  font-family: 'Rajdhani', sans-serif;
+}
+
+/* Hover pada item menu yang TIDAK aktif */
+.nav-link:not(.active):hover {
+  color: var(--pink) !important;
+}
+
+/* Style untuk link yang aktif */
+.nav-link.active {
+  color: var(--heading) !important;
+  background: transparent !important;
+  font-weight: normal !important;
+}
+
+/* Hapus style hover pada link yang aktif */
+.nav-link.active:hover,
+.nav-link.active:focus,
+.nav-link.active:active {
+  color: var(--heading) !important;
+  background: transparent !important;
+}
+
+/* DROPDOWN PRODUK */
+.product-dropdown {
+  padding-left: 35px;
+  background: transparent !important;
+}
+
+.product-dropdown.open {
+  display: block;
+  background: transparent !important;
+  color: var(--heading) !important;
+}
+
+/* Warna submenu produk */
+.product-dropdown .nav-link {
+  font-size: 13px;
+  padding: 8px 15px;
+  color: var(--heading) !important;
+  background: transparent !important;
+}
+
+/* Hover submenu produk */
+.product-dropdown .nav-link:hover {
+  background: transparent !important;
+  color: var(--pink) !important;
+}
+
+/* dropdown produk */
+.product-dropdown {
+  display: none;
+  padding-left: 10px;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.product-dropdown.open {
+  display: block;
+  opacity: 1;
+  transform: translateY(0); 
+}
+
+/* .product-dropdown.open {
+  display: block;
+  color: black;
+} */
+
+.product-dropdown .nav-link.sub-menu {
+  padding-left: 10px;
+  color: var(--heading) !important;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  background: transparent !important;
+}
+
+.product-dropdown .nav-link.sub-menu:hover {
+  background: transparent !important;
+  color: var(--pink) !important;
+  border-radius: 0;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.product-dropdown .nav-link.sub-menu:hover .menu-icon {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+  transition: 0.3s;
+}
+
+.product-dropdown .nav-link.sub-menu .menu-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+/* Sembunyikan teks saat sidebar ditutup */
+.sidebar-wrapper.closed .link-text {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+/* Saat hover di sidebar tertutup, munculkan teks di samping ikon */
+.sidebar-wrapper.closed .nav-link:hover .link-text {
+  opacity: 1;
+  width: auto;
+  white-space: nowrap;
+  position: absolute;
+  left: 100px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* LOGOUT */
+.logout {
+  margin-top: auto;
+  width: 100%;
+}
+
+/* SIDEBAR CONTAINER */
+.sidebar-container {
+  width: 250px;
+  height: 100vh;
+  padding: 20px;
+  background: var(--card);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s ease-in-out;
+}
+
+/* Saat sidebar ditutup */
+.sidebar-container.closed {
+  width: 90px;
+  padding: 20px 10px;
+  overflow: visible;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .sidebar-wrapper {
+    width: 220px;
+  }
+  
+  .sidebar-wrapper.closed {
+    width: 90px;
+  }
+  
+  .logo {
+    width: 100px;
+    margin-top: 70px;
+  }
+  
+  .sidebar-wrapper.closed .logo {
+    margin-top: 70px;
+  }
+}
+
+@media (max-width: 992px) {
+  .sidebar-wrapper {
+    width: 200px;
+  }
+  
+  .sidebar-wrapper.closed {
+    width: 90px;
+  }
+  
+  .logo {
+    width: 90px;
+    margin-top: 70px;
+  }
+  
+  .sidebar-wrapper.closed .logo {
+    margin-top: 70px;
+  }
+  
+  .nav-link {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar-wrapper {
+    width: 80px;
+  }
+  
+  .sidebar-wrapper.closed {
+    width: 60px;
+  }
+  
+  .logo {
+    width: 50px;
+    margin: 70px auto 15px;
+  }
+  
+  .sidebar-wrapper.closed .logo {
+    margin-top: 70px;
+  }
+  
+  .link-text {
+    display: none;
+  }
+  
+  .nav-link {
+    justify-content: center;
+    padding: 12px 5px;
+  }
+  
+  .nav-link .icon {
+    font-size: 20px;
+    min-width: unset;
+  }
+  
+  .product-dropdown {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .sidebar-wrapper {
+    width: 60px;
+  }
+  
+  .sidebar-wrapper.closed {
+    width: 60px;
+  }
+  
+  .logo {
+    width: 40px;
+    margin-top: 70px;
+  }
+  
+  .sidebar-wrapper.closed .logo {
+    margin-top: 70px;
+  }
+  
+  .nav-link .icon {
+    font-size: 18px;
+  }
+}

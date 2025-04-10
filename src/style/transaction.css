@@ -1,0 +1,83 @@
+body {
+  background: var(--background);
+  color: var(--heading);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.transaction-details-container {
+  background: var(--background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.transaction-card {
+  background : var(--card) !important;
+  border-radius: 10px;
+  padding: 40px; 
+  width: 95%; 
+  max-width: 500px; 
+  text-align: center;
+  border: 2px solid var(--pink);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  color: #e0e0e0; 
+}
+
+.transaction-card h2 {
+  color: var(--heading);
+  margin-bottom: 20px;
+  font-family: Rajdhani;
+  font-size: 2.2em;
+}
+
+.transaction-card p {
+  font-family: 'inter', sans-serif;
+  font-size: 1.2em; 
+  line-height: 1.6;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.transaction-card strong {
+  color: var(--pink);
+}
+
+.transaction-card button {
+  background: var(--background);
+  color: var(--heading);
+  border: 2px solid var(--pink);
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-size: 1em;
+  font-family: 'rajdhani', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.transaction-card button:hover {
+  background-color: var(--pink);
+}
+
+/* Media query untuk layar yang lebih kecil */
+@media (max-width: 600px) {
+  .transaction-card {
+    padding: 30px; /* Padding lebih besar pada layar kecil */
+  }
+
+  .transaction-card h2 {
+    font-size: 2em; /* Font size lebih besar pada layar kecil */
+  }
+
+  .transaction-card p {
+    font-size: 1.1em; /* Font size lebih besar pada layar kecil */
+  }
+
+  .transaction-card button {
+    padding: 10px 25px;
+  }
+}
